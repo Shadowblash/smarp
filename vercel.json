@@ -1,9 +1,9 @@
 {
-  "functions": {
-    "server.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
+ "functions": {
+  "server.js": {
+    "runtime": "vercel/node@22"
+  }
+},
   "routes": [
     { "src": "/(.*)", "dest": "server.js" }
   ]
