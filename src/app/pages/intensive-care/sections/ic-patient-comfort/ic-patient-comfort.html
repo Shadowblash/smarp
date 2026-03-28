@@ -1,0 +1,49 @@
+<section class="py-24 bg-background">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="bg-surface rounded-2xl overflow-hidden border border-outline-variant/50 shadow-[0_4px_32px_rgba(12,35,64,0.06)]">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+
+        <!-- Text -->
+        <div class="p-12 md:p-16 space-y-7">
+          <div class="h-1 w-12 bg-smarp-teal mb-8 rounded-full"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-3">
+              <div class="h-px w-6 bg-smarp-teal flex-shrink-0"></div>
+              <p class="text-[10px] font-semibold tracking-[0.2em] uppercase text-smarp-teal">Bien-être global</p>
+            </div>
+            <h2 class="text-3xl font-headline font-bold text-smarp-navy leading-tight">
+              Confort et prise en charge<br>de la douleur
+            </h2>
+          </div>
+          <p class="text-on-surface-variant leading-relaxed text-[15px]">
+            La guérison ne se résume pas aux données et aux appareils — c'est avant tout une expérience humaine. Notre équipe est spécialisée dans <span class="text-smarp-teal font-semibold">l'analgésie multimodale</span> : une combinaison de techniques pour minimiser la douleur tout en réduisant le recours aux sédatifs puissants.
+          </p>
+          <ul class="space-y-3.5">
+            @for (item of items; track item.label) {
+              <li class="flex items-center gap-3 text-on-surface">
+                <span class="w-5 h-5 rounded-full bg-smarp-teal/12 flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined text-smarp-teal" style="font-size: 13px; font-variation-settings: 'FILL' 1;">check</span>
+                </span>
+                <span class="text-sm font-medium">{{ item.label }}</span>
+              </li>
+            }
+          </ul>
+          <a routerLink="/faq" class="inline-flex items-center gap-2 text-smarp-teal font-semibold text-sm hover:gap-3 transition-all duration-200">
+            Questions sur la récupération
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative min-h-[380px]">
+          <img
+            class="absolute inset-0 w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1000&q=80"
+            alt="Infirmière prenant la tension artérielle d'une patiente — relation de soin bienveillante et attentionnée"
+          />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

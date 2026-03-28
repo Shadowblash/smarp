@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Material Symbols icon rendering */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* Custom utilities not expressible as Tailwind utilities */
+.clinical-gradient {
+  background: linear-gradient(135deg, #0C2340 0%, #1456A0 100%);
+}
+
+.clinical-shadow {
+  box-shadow: 0 4px 24px rgba(12, 35, 64, 0.08);
+}
+
+.teal-glow {
+  box-shadow: 0 0 0 3px rgba(10, 114, 101, 0.15);
+}
+
+/* Warm parchment texture — subtle SVG noise overlay for premium feel */
+.smarp-texture {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: multiply;
+  }
+}
+
+/* ─── Animation system ───────────────────────────────────────────────────────
+ *
+ * Two mechanisms:
+ *
+ * 1. .hero-enter   — CSS keyframe, above-fold staggered entrance.
+ *    Apply with style="--anim-delay: Xms" to stagger siblings.
+ *
+ * 2. .reveal / .revealed — scroll-triggered transition.
+ *    Applied by AnimateOnScrollDirective; never add manually.
+ *    Use [revealDelay]="Xms" on the directive for staggered groups.
+ *
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+/* Easing: ease-out-expo — fast start, graceful deceleration */
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+/* 1 ─ Hero entrance (page load, above the fold) ──── */
+@keyframes smarpFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter {
+  animation: smarpFadeUp 0.7s #{$ease-out} both;
+  animation-delay: var(--anim-delay, 0ms);
+}
+
+/* 2 ─ Scroll-triggered reveal ──────────────────────── */
+.reveal {
+  transition:
+    opacity  0.65s #{$ease-out},
+    transform 0.65s #{$ease-out};
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal:not(.revealed) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* 3 ─ Accessibility: honour prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter {
+    animation: none;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reveal,
+  .reveal.revealed {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,52 @@
+<section class="py-24 bg-background">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="bg-smarp-navy rounded-2xl p-12 md:p-16 relative overflow-hidden">
+
+      <!-- Decorative -->
+      <div class="absolute -top-24 -right-24 w-80 h-80 bg-smarp-teal/[0.04] rounded-full pointer-events-none"></div>
+      <div class="absolute -bottom-16 -left-16 w-56 h-56 bg-primary/[0.05] rounded-full pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+        <!-- Text -->
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-8 bg-smarp-gold flex-shrink-0"></div>
+            <span class="text-[10px] font-semibold tracking-[0.2em] uppercase text-smarp-gold">Votre consentement</span>
+          </div>
+          <h2 class="text-3xl font-headline font-bold text-white mb-5 leading-tight">
+            Des questions sur votre intervention ?
+          </h2>
+          <p class="text-white/55 leading-relaxed mb-8 text-[15px]">
+            Téléchargez notre document d'information médicale sur l'anesthésie. Lisez-le attentivement avant votre consultation pré-anesthésique pour pouvoir donner votre consentement éclairé.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/assets/documents/consentement.pdf" download
+               class="inline-flex items-center gap-2 bg-smarp-gold text-smarp-navy px-7 py-3.5 rounded-lg font-bold text-sm hover:brightness-110 transition-all">
+              <span class="material-symbols-outlined text-base">download</span>
+              Document d'information (PDF)
+            </a>
+            <a routerLink="/contact"
+               class="inline-flex items-center gap-2 border border-white/25 text-white/85 px-7 py-3.5 rounded-lg font-medium text-sm hover:bg-white/8 hover:border-white/45 transition-all duration-200">
+              Nous contacter
+            </a>
+          </div>
+        </div>
+
+        <!-- Trust items -->
+        <div class="space-y-3">
+          @for (item of trustItems; track item.label) {
+            <div class="flex items-center gap-4 p-4 bg-white/6 rounded-xl border border-white/10">
+              <span class="material-symbols-outlined text-smarp-gold text-xl flex-shrink-0" style="font-variation-settings: 'FILL' 1;">{{ item.icon }}</span>
+              <div>
+                <p class="font-semibold text-white text-sm">{{ item.label }}</p>
+                <p class="text-white/45 text-xs mt-0.5">{{ item.detail }}</p>
+              </div>
+            </div>
+          }
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

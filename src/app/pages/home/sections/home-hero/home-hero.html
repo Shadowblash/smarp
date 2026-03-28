@@ -1,0 +1,96 @@
+<section class="grid grid-cols-1 lg:grid-cols-[2fr_2fr] min-h-[92vh] overflow-hidden">
+
+  <!-- ── Left: Content panel ───────────────────────────────────────────── -->
+  <div class="relative bg-smarp-navy flex items-center py-20 px-6 md:px-12 lg:px-16 xl:px-24">
+
+    <!-- Decorative circles -->
+    <div class="absolute top-0 right-0 w-72 h-72 rounded-full bg-smarp-teal/[0.04] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-smarp-teal/[0.06] -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+    <div class="relative z-10 w-full max-w-xl">
+
+      <!-- Eyebrow — side rule treatment -->
+      <div class="flex items-center gap-4 mb-8 hero-enter" style="--anim-delay: 0ms">
+        <div class="h-px w-10 bg-smarp-teal flex-shrink-0"></div>
+        <span class="text-[10px] font-semibold tracking-[0.2em] uppercase text-smarp-teal/90 leading-none">
+          Clinique Mutualiste Chirurgicale · Saint-Étienne
+        </span>
+      </div>
+
+      <!-- Heading — Playfair Display serif: authoritative yet warm -->
+      <h1
+        class="font-headline text-4xl md:text-5xl xl:text-[3.5rem] font-bold text-white leading-[1.15] tracking-tight mb-6 hero-enter"
+        style="--anim-delay: 120ms"
+      >
+        Votre sécurité,<br>
+        notre engagement<br>
+        <span class="italic font-normal text-primary-fixed-dim">quotidien.</span>
+      </h1>
+
+      <!-- Description -->
+      <p
+        class="text-white/60 text-base md:text-lg leading-relaxed mb-10 max-w-md hero-enter"
+        style="--anim-delay: 240ms"
+      >
+        18 médecins anesthésistes-réanimateurs accompagnent chaque patient de la consultation pré-anesthésique au réveil — avec rigueur, transparence et bienveillance.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap items-center gap-3 mb-12 hero-enter" style="--anim-delay: 360ms">
+        <a
+          routerLink="/about"
+          class="inline-flex items-center gap-2 bg-white text-smarp-navy px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-outline-variant transition-colors shadow-md"
+        >
+          Comprendre l'anesthésie
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+        <a
+          routerLink="/faq"
+          class="inline-flex items-center gap-2 border border-white/25 text-white/85 px-6 py-3.5 rounded-lg font-medium text-sm hover:bg-white/8 hover:border-white/45 transition-all duration-200"
+        >
+          Questions fréquentes
+        </a>
+      </div>
+
+      <!-- Trust strip — with vertical separators -->
+      <div class="flex flex-wrap items-center gap-4 pt-8 border-t border-white/10 hero-enter" style="--anim-delay: 460ms">
+        <div class="flex items-center gap-2.5 text-white/55 text-sm">
+          <span class="material-symbols-outlined text-smarp-teal text-xl" style="font-variation-settings: 'FILL' 1;">group</span>
+          <span>18 médecins spécialistes</span>
+        </div>
+        <div class="w-px h-3.5 bg-white/15 flex-shrink-0"></div>
+        <div class="flex items-center gap-2.5 text-white/55 text-sm">
+          <span class="material-symbols-outlined text-smarp-teal text-xl" style="font-variation-settings: 'FILL' 1;">schedule</span>
+          <span>Présence 24h/24, 7j/7</span>
+        </div>
+        <div class="w-px h-3.5 bg-white/15 flex-shrink-0"></div>
+        <div class="flex items-center gap-2.5 text-white/55 text-sm">
+          <span class="material-symbols-outlined text-smarp-gold text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+          <span>Certifiés SFAR</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Right: Image panel ─────────────────────────────────────────────── -->
+  <div class="relative hidden lg:block hero-enter" style="--anim-delay: 80ms">
+
+    <img
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      [src]="heroImage.src"
+      [alt]="heroImage.alt"
+    />
+
+    <!-- Layer 1: Very light blue tint -->
+    <div class="absolute inset-0 bg-smarp-navy/8 mix-blend-multiply"></div>
+
+    <!-- Layer 2: Left gradient — seam blend into navy text panel -->
+    <div class="absolute inset-0 bg-gradient-to-r from-smarp-navy via-smarp-navy/12 to-transparent"></div>
+
+    <!-- Layer 3: Bottom vignette -->
+    <div class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-smarp-navy/20 to-transparent"></div>
+
+  </div>
+
+</section>

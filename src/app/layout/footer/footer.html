@@ -1,0 +1,80 @@
+<footer class="bg-smarp-navy text-white w-full pt-16 pb-8 font-body text-sm">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-14">
+
+      <!-- Brand column -->
+      <div class="col-span-1 space-y-5">
+        <div>
+          <p class="text-xl font-black tracking-tight font-headline">SMARP</p>
+          <p class="text-[9px] font-semibold tracking-[0.18em] text-white/40 uppercase mt-1">Anesthésie · Réanimation</p>
+        </div>
+        <p class="text-white/55 leading-relaxed text-[13px]">
+          Unité d'Anesthésie Réanimation de la Clinique Mutualiste Chirurgicale.<br>
+          Saint-Étienne, Loire.
+        </p>
+        <div class="space-y-2.5 text-white/60">
+          <a href="tel:0477422700" class="flex items-center gap-2.5 hover:text-white transition-colors text-[13px]">
+            <span class="material-symbols-outlined text-smarp-teal" style="font-size: 16px; font-variation-settings: 'FILL' 1;">call</span>
+            04.77.42.27.00
+          </a>
+          <a href="mailto:anesthesie@smarp42.fr" class="flex items-center gap-2.5 hover:text-white transition-colors text-[13px]">
+            <span class="material-symbols-outlined text-smarp-teal" style="font-size: 16px; font-variation-settings: 'FILL' 1;">mail</span>
+            anesthesie&#64;smarp42.fr
+          </a>
+          <p class="flex items-start gap-2.5 text-[13px]">
+            <span class="material-symbols-outlined text-smarp-teal mt-0.5" style="font-size: 16px; font-variation-settings: 'FILL' 1;">location_on</span>
+            <span>39 bd de la Palle<br>42030 Saint-Étienne Cedex 2</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Link columns -->
+      @for (col of columns; track col.title) {
+        <div>
+          <h5 class="font-bold text-white mb-5 text-[10px] tracking-[0.18em] uppercase">{{ col.title }}</h5>
+          <ul class="space-y-3">
+            @for (link of col.links; track link.label) {
+              <li>
+                <a [routerLink]="link.path" class="text-white/55 hover:text-white transition-colors text-[13px]">
+                  {{ link.label }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+
+      <!-- Emergency column -->
+      <div>
+        <h5 class="font-bold text-white mb-5 text-[10px] tracking-[0.18em] uppercase">Urgences</h5>
+        <div class="bg-white/8 border border-white/15 rounded-xl p-5 space-y-3">
+          <div class="flex items-center gap-2 text-white font-semibold text-sm">
+            <span class="material-symbols-outlined text-red-400" style="font-variation-settings: 'FILL' 1;">emergency</span>
+            Urgence vitale : 15 ou 112
+          </div>
+          <p class="text-white/55 text-xs leading-relaxed">
+            Un médecin anesthésiste-réanimateur est présent sur site <strong class="text-white/75">24h/24, 7j/7</strong>.
+          </p>
+          <a href="tel:0477422700" class="block text-center bg-white text-smarp-navy font-bold py-2.5 rounded-lg text-sm hover:bg-outline-variant transition-colors mt-2">
+            04.77.42.27.00
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Thin gold accent rule -->
+    <div class="h-px w-full bg-gradient-to-r from-transparent via-smarp-gold/30 to-transparent mb-8"></div>
+
+    <!-- Bottom bar -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/35 text-xs">&copy; {{ year }} SMARP — Unité d'Anesthésie Réanimation. Clinique Mutualiste Chirurgicale. Tous droits réservés.</p>
+      <div class="flex gap-6 text-white/35 text-xs">
+        <a href="#" class="hover:text-white/65 transition-colors">Mentions légales</a>
+        <a href="#" class="hover:text-white/65 transition-colors">Politique de confidentialité</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

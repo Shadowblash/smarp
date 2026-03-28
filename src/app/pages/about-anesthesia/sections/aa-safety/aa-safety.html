@@ -1,0 +1,50 @@
+<section class="py-24 bg-background">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="bg-surface rounded-2xl overflow-hidden border border-outline-variant/50 shadow-[0_4px_32px_rgba(12,35,64,0.06)]">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+
+        <!-- Text -->
+        <div class="p-12 md:p-16">
+          <div class="h-1 w-16 bg-smarp-gold mb-10 rounded-full"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="h-px w-6 bg-primary flex-shrink-0"></div>
+            <p class="text-[10px] font-semibold tracking-[0.2em] uppercase text-primary">Surveillance</p>
+          </div>
+          <h2 class="text-3xl font-headline font-bold text-smarp-navy leading-tight mb-10">
+            Comment êtes-vous surveillé(e)<br>pendant l'anesthésie ?
+          </h2>
+
+          <div class="space-y-8">
+            @for (item of items; track item.title) {
+              <div class="flex gap-5">
+                <div class="shrink-0 w-11 h-11 bg-primary-fixed text-primary rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-lg">{{ item.icon }}</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-smarp-navy mb-1.5 text-sm">{{ item.title }}</h4>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">{{ item.description }}</p>
+                </div>
+              </div>
+            }
+          </div>
+
+          <div class="mt-10 p-5 bg-surface-container-low rounded-xl border border-outline-variant/30">
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              <strong class="text-smarp-navy">L'anesthésie se déroule dans une salle équipée d'un matériel adéquat</strong>, adapté à votre cas et vérifié avant chaque utilisation. Tout matériel en contact avec votre corps est soit à usage unique, soit désinfecté ou stérilisé.
+            </p>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="relative min-h-[400px] bg-surface-container-low">
+          <img
+            class="absolute inset-0 w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=1000&q=80"
+            alt="Médecins consultant des données d'imagerie médicale — surveillance et analyse clinique collaborative"
+          />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
