@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-aa-hero',
+  selector: 'app-anesthesia-hero',
   imports: [RouterLink],
-  templateUrl: './aa-hero.html',
+  templateUrl: './anesthesia-hero.html',
 })
-export class AaHero {}
+export class AnesthesiaHero {}

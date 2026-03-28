@@ -2,23 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Base rendering ─────────────────────────────────────────────────────────
+ * Antialiasing + ligatures for Playfair Display & DM Sans.
+ * Without this, subpixel rendering can make the serif headlines look coarse.
+ * ─────────────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 /* Material Symbols icon rendering */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
   vertical-align: middle;
+  /* Prevent icons from triggering layout shifts on font load */
+  font-display: block;
 }
 
-/* Custom utilities not expressible as Tailwind utilities */
+/* ─── Custom utilities not expressible as Tailwind utilities ─────────────── */
+
 .clinical-gradient {
   background: linear-gradient(135deg, #0C2340 0%, #1456A0 100%);
 }
 
+/* Warmer, more directional shadow — light source slightly above and left.
+ * The two-layer approach: sharp ambient + soft key light for realism.       */
 .clinical-shadow {
-  box-shadow: 0 4px 24px rgba(12, 35, 64, 0.08);
+  box-shadow:
+    0 1px 3px rgba(12, 35, 64, 0.06),
+    0 4px 24px rgba(12, 35, 64, 0.09);
 }
 
+/* Teal glow used on focus and hover trust indicators */
 .teal-glow {
-  box-shadow: 0 0 0 3px rgba(10, 114, 101, 0.15);
+  box-shadow: 0 0 0 3px rgba(10, 114, 101, 0.18);
 }
 
 /* Warm parchment texture — subtle SVG noise overlay for premium feel */
@@ -37,25 +60,33 @@
 
 /* ─── Animation system ───────────────────────────────────────────────────────
  *
- * Two mechanisms:
+ * Four mechanisms:
  *
- * 1. .hero-enter   — CSS keyframe, above-fold staggered entrance.
+ * 1. .hero-enter     — CSS keyframe, above-fold staggered entrance.
  *    Apply with style="--anim-delay: Xms" to stagger siblings.
  *
  * 2. .reveal / .revealed — scroll-triggered transition.
  *    Applied by AnimateOnScrollDirective; never add manually.
  *    Use [revealDelay]="Xms" on the directive for staggered groups.
  *
+ * 3. .mobile-menu-enter — one-shot slide+fade for mobile navigation panel.
+ *    Add directly to the mobile menu container element.
+ *
+ * 4. .breathe        — gentle infinite scale pulse for decorative circles.
+ *    Keeps background ambiance alive without distracting the user.
+ *
  * ──────────────────────────────────────────────────────────────────────────── */
 
 /* Easing: ease-out-expo — fast start, graceful deceleration */
 $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+/* Standard Material easing for closing/collapsing motions */
+$ease-in:  cubic-bezier(0.4, 0, 1, 1);
 
 /* 1 ─ Hero entrance (page load, above the fold) ──── */
 @keyframes smarpFadeUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
@@ -64,29 +95,66 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-enter {
-  animation: smarpFadeUp 0.7s #{$ease-out} both;
+  animation: smarpFadeUp 0.75s #{$ease-out} both;
   animation-delay: var(--anim-delay, 0ms);
+  /* GPU compositing hint — prevents jank on the first paint */
+  will-change: opacity, transform;
 }
 
 /* 2 ─ Scroll-triggered reveal ──────────────────────── */
 .reveal {
   transition:
-    opacity  0.65s #{$ease-out},
-    transform 0.65s #{$ease-out};
+    opacity  0.7s #{$ease-out},
+    transform 0.7s #{$ease-out};
   transition-delay: var(--reveal-delay, 0ms);
+  /* GPU compositing hint */
+  will-change: opacity, transform;
 }
 
 .reveal:not(.revealed) {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(24px);
 }
 
-/* 3 ─ Accessibility: honour prefers-reduced-motion ── */
+/* 3 ─ Mobile menu slide-in ─────────────────────────── */
+@keyframes menuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-enter {
+  animation: menuSlideDown 0.22s #{$ease-out} both;
+}
+
+/* 4 ─ Decorative circle ambient breathing ──────────── */
+@keyframes breathe {
+  0%, 100% { transform: scale(1);    opacity: 1; }
+  50%       { transform: scale(1.06); opacity: 0.85; }
+}
+
+/* Slow, barely-perceptible — purely subliminal ambiance */
+.breathe-slow {
+  animation: breathe 8s ease-in-out infinite;
+}
+
+.breathe-slower {
+  animation: breathe 12s ease-in-out infinite;
+  animation-delay: -4s; /* offset from breathe-slow so they don't sync */
+}
+
+/* 5 ─ Accessibility: honour prefers-reduced-motion ── */
 @media (prefers-reduced-motion: reduce) {
   .hero-enter {
     animation: none;
     opacity: 1 !important;
     transform: none !important;
+    will-change: auto;
   }
 
   .reveal,
@@ -94,5 +162,46 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    will-change: auto;
   }
+
+  .mobile-menu-enter {
+    animation: none;
+  }
+
+  .breathe-slow,
+  .breathe-slower {
+    animation: none;
+  }
+}
+
+/* ─── Focus ring system ──────────────────────────────────────────────────────
+ * Using focus-visible (not focus) so mouse users never see outlines,
+ * but keyboard users always do — WCAG 2.4.7 compliance.
+ *
+ * We define the base ring here so it can be extended per-component
+ * using Tailwind's focus-visible: variant.
+ * ─────────────────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgba(10, 114, 101, 0.7); /* smarp-teal at 70% */
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* On dark backgrounds, use a white ring instead */
+.focus-ring-white:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Suppress the global ring on elements that define their own via Tailwind */
+.focus-ring-none:focus-visible {
+  outline: none;
+}
+
+/* ─── Scrollbar utilities ────────────────────────────────────────────────────
+ * Hides scrollbar while keeping scroll functionality (category nav pills).  */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
 }

@@ -5,9 +5,9 @@
   <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex items-center justify-between h-[68px]">
 
     <!-- Brand -->
-    <a routerLink="/" (click)="closeMenu()" class="flex flex-col leading-none group">
+    <a routerLink="/" (click)="closeMenu()" class="flex flex-col leading-none group focus-ring-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-smarp-teal/60 rounded-sm">
       <span class="text-xl font-black tracking-tight text-smarp-navy font-headline group-hover:text-primary transition-colors duration-200">SMARP</span>
-      <span class="text-[9px] font-semibold tracking-[0.18em] text-on-surface-variant uppercase mt-0.5">Anesthésie · Réanimation</span>
+      <span class="text-[11px] font-semibold tracking-[0.18em] text-on-surface-variant uppercase mt-0.5">Anesthésie · Réanimation</span>
     </a>
 
     <!-- Desktop Nav -->
@@ -18,8 +18,10 @@
           routerLinkActive="text-smarp-navy font-semibold"
           [routerLinkActiveOptions]="{ exact: !!link.exact }"
           class="text-sm text-on-surface-variant font-medium hover:text-smarp-navy transition-colors duration-200 relative py-1
-                 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-smarp-teal after:scale-x-0 after:transition-transform after:duration-200
-                 [&.active-link]:after:scale-x-100"
+                 focus-ring-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-smarp-teal/50 rounded-sm
+                 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-smarp-teal
+                 after:scale-x-0 after:origin-left after:transition-transform after:duration-250 after:ease-out
+                 hover:after:scale-x-100 [&.active-link]:after:scale-x-100"
           (click)="closeMenu()"
         >
           {{ link.label }}
@@ -30,7 +32,9 @@
     <!-- Emergency CTA — pill shape for distinction -->
     <a
       href="tel:0477422700"
-      class="hidden md:inline-flex items-center gap-2 bg-smarp-navy text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary transition-colors duration-200 shadow-sm"
+      class="hidden md:inline-flex items-center gap-2 bg-smarp-navy text-white px-5 py-2.5 rounded-full text-sm font-semibold
+             hover:bg-primary active:scale-[0.97] transition-[background-color,transform] duration-200 shadow-sm
+             focus-ring-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-smarp-navy focus-visible:ring-offset-2"
     >
       <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">emergency</span>
       04.77.42.27.00
@@ -38,35 +42,43 @@
 
     <!-- Mobile Burger -->
     <button
-      class="md:hidden flex flex-col gap-[5px] w-10 h-10 items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors"
+      class="md:hidden flex flex-col gap-[5px] w-10 h-10 items-center justify-center rounded-lg hover:bg-surface-container-low
+             active:bg-surface-container transition-colors focus-ring-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-smarp-teal/50"
       (click)="toggleMenu()"
       [attr.aria-expanded]="isMenuOpen()"
       aria-label="Menu"
     >
-      <span class="block w-5 h-[2px] bg-smarp-navy rounded transition-all duration-300"
+      <!-- The three bars animate into an × — each bar uses independent transforms -->
+      <span class="block w-5 h-[2px] bg-smarp-navy rounded transition-[transform,opacity] duration-300"
             [class.rotate-45]="isMenuOpen()" [class.translate-y-[7px]]="isMenuOpen()"></span>
-      <span class="block w-5 h-[2px] bg-smarp-navy rounded transition-all duration-300"
-            [class.opacity-0]="isMenuOpen()"></span>
-      <span class="block w-5 h-[2px] bg-smarp-navy rounded transition-all duration-300"
+      <span class="block w-5 h-[2px] bg-smarp-navy rounded transition-[transform,opacity] duration-300"
+            [class.opacity-0]="isMenuOpen()" [class.scale-x-0]="isMenuOpen()"></span>
+      <span class="block w-5 h-[2px] bg-smarp-navy rounded transition-[transform,opacity] duration-300"
             [class.-rotate-45]="isMenuOpen()" [class.-translate-y-[7px]]="isMenuOpen()"></span>
     </button>
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu — .mobile-menu-enter drives the slide-in from styles.scss -->
   @if (isMenuOpen()) {
-    <div class="md:hidden border-t border-outline-variant/40 bg-background px-6 py-5 flex flex-col gap-4">
+    <div class="mobile-menu-enter md:hidden border-t border-outline-variant/40 bg-background px-6 py-5 flex flex-col gap-4">
       @for (link of navLinks; track link.path) {
         <a
           [routerLink]="link.path"
           routerLinkActive="text-primary font-semibold"
           [routerLinkActiveOptions]="{ exact: !!link.exact }"
-          class="text-base text-on-surface font-medium py-1 border-b border-outline-variant/30 pb-3"
+          class="text-base text-on-surface font-medium py-1 border-b border-outline-variant/30 pb-3
+                 hover:text-smarp-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-smarp-teal/40 rounded-sm"
           (click)="closeMenu()"
         >
           {{ link.label }}
         </a>
       }
-      <a href="tel:0477422700" class="mt-2 inline-flex items-center gap-2 bg-smarp-navy text-white px-5 py-3 rounded-full font-semibold text-sm justify-center" (click)="closeMenu()">
+      <a
+        href="tel:0477422700"
+        class="mt-2 inline-flex items-center gap-2 bg-smarp-navy text-white px-5 py-3 rounded-full font-semibold text-sm justify-center
+               active:scale-[0.97] transition-transform duration-150"
+        (click)="closeMenu()"
+      >
         <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">emergency</span>
         04.77.42.27.00
       </a>

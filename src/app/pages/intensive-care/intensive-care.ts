@@ -1,14 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SeoService } from '../../core/services/seo.service';
-import { IcHero } from './sections/ic-hero/ic-hero';
-import { IcPacu } from './sections/ic-pacu/ic-pacu';
-import { IcIcuBento } from './sections/ic-icu-bento/ic-icu-bento';
-import { IcPatientComfort } from './sections/ic-patient-comfort/ic-patient-comfort';
-import { IcCta } from './sections/ic-cta/ic-cta';
+import { IntensiveCareHero } from './sections/intensive-care-hero/intensive-care-hero';
+import { IntensiveCareRecovery } from './sections/intensive-care-recovery/intensive-care-recovery';
+import { IntensiveCareBento } from './sections/intensive-care-bento/intensive-care-bento';
+import { IntensiveCarePatientComfort } from './sections/intensive-care-patient-comfort/intensive-care-patient-comfort';
+import { IntensiveCareCta } from './sections/intensive-care-cta/intensive-care-cta';
 
 @Component({
   selector: 'app-intensive-care',
-  imports: [IcHero, IcPacu, IcIcuBento, IcPatientComfort, IcCta],
+  imports: [IntensiveCareHero, IntensiveCareRecovery, IntensiveCareBento, IntensiveCarePatientComfort, IntensiveCareCta],
   templateUrl: './intensive-care.html',
 })
 export class IntensiveCare implements OnInit {

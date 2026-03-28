@@ -1,15 +1,15 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SeoService } from '../../core/services/seo.service';
-import { AaHero } from './sections/aa-hero/aa-hero';
-import { AaWhatIs } from './sections/aa-what-is/aa-what-is';
-import { AaTypes } from './sections/aa-types/aa-types';
-import { AaRisks } from './sections/aa-risks/aa-risks';
-import { AaSafety } from './sections/aa-safety/aa-safety';
-import { AaCta } from './sections/aa-cta/aa-cta';
+import { AnesthesiaHero } from './sections/anesthesia-hero/anesthesia-hero';
+import { AnesthesiaWhatIs } from './sections/anesthesia-what-is/anesthesia-what-is';
+import { AnesthesiaTypes } from './sections/anesthesia-types/anesthesia-types';
+import { AnesthesiaRisks } from './sections/anesthesia-risks/anesthesia-risks';
+import { AnesthesiaSafety } from './sections/anesthesia-safety/anesthesia-safety';
+import { AnesthesiaCta } from './sections/anesthesia-cta/anesthesia-cta';
 
 @Component({
   selector: 'app-about-anesthesia',
-  imports: [AaHero, AaWhatIs, AaTypes, AaRisks, AaSafety, AaCta],
+  imports: [AnesthesiaHero, AnesthesiaWhatIs, AnesthesiaTypes, AnesthesiaRisks, AnesthesiaSafety, AnesthesiaCta],
   templateUrl: './about-anesthesia.html',
 })
 export class AboutAnesthesia implements OnInit {

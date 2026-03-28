@@ -1,0 +1,52 @@
+<section class="py-28 bg-surface-container-low">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+
+    <div animateOnScroll class="text-center max-w-2xl mx-auto mb-14">
+      <div class="flex items-center justify-center gap-4 mb-5">
+        <div class="h-px w-6 bg-smarp-teal flex-shrink-0"></div>
+        <p class="text-[10px] font-semibold tracking-[0.2em] uppercase text-smarp-teal">Techniques</p>
+        <div class="h-px w-6 bg-smarp-teal flex-shrink-0"></div>
+      </div>
+      <h2 class="text-3xl lg:text-4xl font-headline font-bold text-smarp-navy mb-4">
+        Les types d'anesthésie
+      </h2>
+      <p class="text-on-surface-variant leading-relaxed text-[15px]">
+        Le type d'anesthésie est choisi en fonction de l'acte chirurgical, de votre état de santé et des résultats de
+        votre bilan préopératoire.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      @for (type of types; track type.title) {
+      <div
+        class="bg-surface p-8 rounded-2xl border border-outline-variant/50 hover:border-smarp-teal/30 hover:shadow-[0_8px_40px_rgba(12,35,64,0.08)] transition-all duration-300 flex flex-col">
+
+        <!-- Icon — circular -->
+        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-7"
+          [class]="type.iconBg + ' ' + type.iconColor">
+          <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">{{ type.icon
+            }}</span>
+        </div>
+
+        <h3 class="font-headline text-xl font-bold text-smarp-navy mb-3">{{ type.title }}</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-7">{{ type.description }}</p>
+
+        <!-- Divider -->
+        <div class="mt-auto pt-6 border-t border-outline-variant/40">
+          <ul class="space-y-2.5">
+            @for (item of type.items; track item) {
+            <li class="flex items-center gap-2.5 text-sm text-on-surface">
+              <span class="material-symbols-outlined text-base mt-0.5 flex-shrink-0"
+                style="font-variation-settings: 'FILL' 1;" [class]="type.iconColor">check_circle</span>
+              {{ item }}
+            </li>
+            }
+          </ul>
+        </div>
+
+      </div>
+      }
+    </div>
+
+  </div>
+</section>

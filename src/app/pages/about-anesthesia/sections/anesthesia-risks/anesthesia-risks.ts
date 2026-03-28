@@ -8,11 +8,11 @@ interface RiskItem {
 }
 
 @Component({
-  selector: 'app-aa-risks',
+  selector: 'app-anesthesia-risks',
   imports: [],
-  templateUrl: './aa-risks.html',
+  templateUrl: './anesthesia-risks.html',
 })
-export class AaRisks {
+export class AnesthesiaRisks {
   protected readonly generalRisks: RiskItem[] = [
     {
       icon: 'sick',

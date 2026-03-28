@@ -6,7 +6,8 @@
       <div class="max-w-lg">
         <div class="flex items-center gap-4 mb-5">
           <div class="h-px w-8 bg-smarp-teal flex-shrink-0"></div>
-          <p class="text-[10px] font-semibold tracking-[0.2em] uppercase text-smarp-teal">Nos expertises</p>
+          <!-- 11px minimum for legibility at this tracking width -->
+          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-smarp-teal">Nos expertises</p>
         </div>
         <h2 class="text-3xl lg:text-4xl font-headline font-bold text-smarp-navy leading-tight">
           Deux piliers au cœur<br>de notre mission
@@ -22,11 +23,16 @@
       @for (card of cards; track card.title; let i = $index) {
         <div
           animateOnScroll [revealDelay]="i * 120"
-          class="group p-10 rounded-2xl border border-outline-variant/50 bg-surface hover:border-smarp-teal/30 hover:shadow-[0_8px_40px_rgba(12,35,64,0.08)] transition-all duration-300"
+          class="group p-10 rounded-2xl border border-outline-variant/50 bg-surface
+                 hover:border-smarp-teal/35 hover:shadow-[0_12px_48px_rgba(12,35,64,0.10)]
+                 active:scale-[0.995]
+                 transition-[border-color,box-shadow,transform] duration-300"
         >
 
-          <!-- Icon — circular treatment -->
-          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-300"
+          <!-- Icon — circular treatment. rotate-6 on hover adds a micro-bounce
+               that makes the icon feel alive rather than just scaling flat.  -->
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-8
+                      transition-[transform] duration-300 group-hover:scale-110 group-hover:rotate-6"
                [class]="card.iconBg + ' ' + card.iconColor">
             <span class="material-symbols-outlined text-xl">{{ card.icon }}</span>
           </div>

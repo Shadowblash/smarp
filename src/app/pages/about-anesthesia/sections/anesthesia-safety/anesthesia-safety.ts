@@ -8,11 +8,11 @@ interface SafetyItem {
 }
 
 @Component({
-  selector: 'app-aa-safety',
+  selector: 'app-anesthesia-safety',
   imports: [],
-  templateUrl: './aa-safety.html',
+  templateUrl: './anesthesia-safety.html',
 })
-export class AaSafety {
+export class AnesthesiaSafety {
   protected readonly items: SafetyItem[] = [
     {
       icon: 'analytics',

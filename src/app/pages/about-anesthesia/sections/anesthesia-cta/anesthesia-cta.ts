@@ -9,11 +9,11 @@ interface TrustItem {
 }
 
 @Component({
-  selector: 'app-aa-cta',
+  selector: 'app-anesthesia-cta',
   imports: [RouterLink],
-  templateUrl: './aa-cta.html',
+  templateUrl: './anesthesia-cta.html',
 })
-export class AaCta {
+export class AnesthesiaCta {
   protected readonly trustItems: TrustItem[] = [
     {
       icon: 'verified_user',

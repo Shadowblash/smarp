@@ -11,11 +11,11 @@ interface AnesthesiaType {
 }
 
 @Component({
-  selector: 'app-aa-types',
+  selector: 'app-anesthesia-types',
   imports: [],
-  templateUrl: './aa-types.html',
+  templateUrl: './anesthesia-types.html',
 })
-export class AaTypes {
+export class AnesthesiaTypes {
   protected readonly types: AnesthesiaType[] = [
     {
       icon: 'bedtime',
