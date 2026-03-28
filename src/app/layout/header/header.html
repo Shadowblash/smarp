@@ -29,15 +29,20 @@
       }
     </nav>
 
-    <!-- Emergency CTA — pill shape for distinction -->
+    <!-- Doctolib CTA — pill shape for distinction -->
     <a
-      href="tel:0477422700"
-      class="hidden md:inline-flex items-center gap-2 bg-smarp-navy text-white px-5 py-2.5 rounded-full text-sm font-semibold
-             hover:bg-primary active:scale-[0.97] transition-[background-color,transform] duration-200 shadow-sm
-             focus-ring-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-smarp-navy focus-visible:ring-offset-2"
+      href="https://www.doctolib.fr/clinique-privee/saint-etienne/anesthesistes-de-l-hopital-prive-de-la-loire"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden md:inline-flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-semibold
+             hover:brightness-110 active:scale-[0.97] transition-[filter,transform,box-shadow] duration-200
+             shadow-sm hover:shadow-[0_4px_16px_rgba(5,150,222,0.35)]
+             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0596DE] focus-visible:ring-offset-2"
+      style="background-color: #0596DE;"
+      aria-label="Prendre rendez-vous sur Doctolib — ouvre un nouvel onglet"
     >
-      <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">emergency</span>
-      04.77.42.27.00
+      <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+      Prendre rendez-vous
     </a>
 
     <!-- Mobile Burger -->
@@ -74,13 +79,18 @@
         </a>
       }
       <a
-        href="tel:0477422700"
-        class="mt-2 inline-flex items-center gap-2 bg-smarp-navy text-white px-5 py-3 rounded-full font-semibold text-sm justify-center
-               active:scale-[0.97] transition-transform duration-150"
+        href="https://www.doctolib.fr/clinique-privee/saint-etienne/anesthesistes-de-l-hopital-prive-de-la-loire"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-2 inline-flex items-center gap-2 text-white px-5 py-3 rounded-full font-semibold text-sm justify-center
+               active:scale-[0.97] transition-[filter,transform] duration-150
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0596DE] focus-visible:ring-offset-2"
+        style="background-color: #0596DE;"
         (click)="closeMenu()"
+        aria-label="Prendre rendez-vous sur Doctolib — ouvre un nouvel onglet"
       >
-        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">emergency</span>
-        04.77.42.27.00
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+        Prendre rendez-vous
       </a>
     </div>
   }

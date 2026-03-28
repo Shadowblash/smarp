@@ -6,10 +6,11 @@ import { HomeContinuum } from './sections/home-continuum/home-continuum';
 import { HomeTrustBanner } from './sections/home-trust-banner/home-trust-banner';
 import { HomeSafetyProtocol } from './sections/home-safety-protocol/home-safety-protocol';
 import { HomeTeam } from './sections/home-team/home-team';
+import { HomeDoctolib } from './sections/home-doctolib/home-doctolib';
 
 @Component({
   selector: 'app-home',
-  imports: [HomeHero, HomeExpertise, HomeContinuum, HomeTrustBanner, HomeSafetyProtocol, HomeTeam],
+  imports: [HomeHero, HomeExpertise, HomeContinuum, HomeTrustBanner, HomeSafetyProtocol, HomeTeam, HomeDoctolib],
   templateUrl: './home.html',
 })
 export class Home implements OnInit {
