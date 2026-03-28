@@ -1,11 +1,7 @@
 {
   "version": 2,
   "public": true,
-  "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/browser/index.html"
-    }
+    { "source": "/(.*)", "destination": "/browser/index.html" }
   ]
 }
