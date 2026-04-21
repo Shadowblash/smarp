@@ -10,12 +10,11 @@ export class HomeTeam {
   protected readonly doctors: string[] = [
     'Dr Jordan BAILLY',
     'Dr Gérald BAUDRY',
-    'Dr Jérémy BAYET',
     'Dr Jordan BONSIGNORE',
     'Dr Pierre BOUCHER',
-    'Dr Marc BOUCHER',
     'Dr Laetitia BURNOL',
     'Dr Laurane CHALVET',
+    'Dr Paul Antoine CHATELARD',
     'Dr Benoît CREMILLIEUX',
     'Dr Magalie DUMAS',
     'Dr Michaël FAURE',
@@ -25,6 +24,8 @@ export class HomeTeam {
     'Dr Matthis LEONARD',
     'Dr Jérémy MALLARD',
     'Dr Jean PASCAL',
+    'Dr Martin PETIT',
+    'Dr Norbert TAMISIER',
     'Dr Marc VERCRUYSSE',
   ];
 }

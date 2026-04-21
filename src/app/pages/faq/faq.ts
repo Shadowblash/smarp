@@ -74,7 +74,7 @@ export class Faq implements OnInit {
         },
         {
           question: 'Le médecin de ma consultation sera-t-il celui qui m\'anesthésiera le jour de l\'opération ?',
-          answer: 'Pas nécessairement. Le SMARP fonctionne comme un groupe de 18 médecins anesthésistes-réanimateurs qui partagent les informations de chaque patient. Le médecin présent le jour de votre intervention aura accès à votre dossier complet constitué lors de la consultation, et assurera votre prise en charge en toute connaissance de votre situation.',
+          answer: 'Pas nécessairement. Le SMARP fonctionne comme un groupe de 19 médecins anesthésistes-réanimateurs qui partagent les informations de chaque patient. Le médecin présent le jour de votre intervention aura accès à votre dossier complet constitué lors de la consultation, et assurera votre prise en charge en toute connaissance de votre situation.',
         },
       ],
     },
@@ -173,7 +173,7 @@ export class Faq implements OnInit {
       items: [
         {
           question: 'Qui sont les médecins du SMARP ?',
-          answer: 'Le SMARP (Société Mutualiste d\'Anesthésie-Réanimation de la Palle) réunit 18 médecins anesthésistes-réanimateurs diplômés et spécialisés. Ils exercent tous à la Clinique Mutualiste Chirurgicale de Saint-Étienne (39 boulevard de la Palle, 42030). Chaque médecin est membre de la Société Française d\'Anesthésie et de Réanimation (SFAR) et se forme régulièrement aux dernières avancées médicales.',
+          answer: 'Le SMARP (Stéphanoise Médicale Anesthésie Réanimation du Pilat) réunit 19 médecins anesthésistes-réanimateurs diplômés et spécialisés, accrédités HAS. Ils exercent tous à l\'Hôpital Privé de la Loire de Saint-Étienne (39 boulevard de la Palle, 42030). Chaque médecin est membre de la Société Française d\'Anesthésie et de Réanimation (SFAR) et se forme régulièrement aux dernières avancées médicales.',
         },
         {
           question: 'Y a-t-il toujours un médecin anesthésiste disponible sur place ?',
@@ -181,7 +181,7 @@ export class Faq implements OnInit {
         },
         {
           question: 'Comment contacter le service avant mon intervention ?',
-          answer: 'Vous pouvez nous joindre par téléphone au 04.77.42.27.00, par email à anesthesie@smarp42.fr, ou vous présenter directement à la Clinique Mutualiste Chirurgicale, 39 boulevard de la Palle, 42030 Saint-Étienne Cedex 2. En cas d\'urgence médicale, composez le 15 (SAMU) ou le 112.',
+          answer: 'Vous pouvez nous joindre par téléphone au 04.77.42.27.00, par email à anesthesie@smarp42.fr, ou vous présenter directement à l\'Hôpital Privé de la Loire, 39 boulevard de la Palle, 42030 Saint-Étienne Cedex 2. En cas d\'urgence médicale, composez le 15 (SAMU) ou le 112.',
         },
       ],
     },

@@ -34,6 +34,11 @@ export class AnesthesiaRisks {
       label: 'Rougeur au site d\'injection',
       detail: 'Peut apparaître sur la veine utilisée pour l\'injection intraveineuse. Disparaît en quelques jours.',
     },
+    {
+      icon: 'dentistry',
+      label: 'Bris dentaire',
+      detail: 'Malgré toutes les précautions prises lors d\'une anesthésie générale, il existe un risque de bris dentaire. Ce risque peut être accru en cas de mauvaise hygiène dentaire.',
+    },
   ];
 
   protected readonly rareRisks: RiskItem[] = [

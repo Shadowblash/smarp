@@ -13,7 +13,7 @@ export class LegalNotice implements OnInit {
   ngOnInit(): void {
     this.seo.setPage({
       title: 'Mentions légales',
-      description: 'Mentions légales du site SMARP — Société Mutualiste d\'Anesthésie-Réanimation de la Palle, Saint-Étienne.',
+      description: 'Mentions légales du site SMARP — Stéphanoise Médicale Anesthésie Réanimation du Pilat, Saint-Étienne.',
     });
   }
 }
