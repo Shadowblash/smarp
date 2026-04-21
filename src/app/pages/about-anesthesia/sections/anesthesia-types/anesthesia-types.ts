@@ -53,5 +53,17 @@ export class AnesthesiaTypes {
         'Récupération quasi-immédiate',
       ],
     },
+    {
+      icon: 'pregnant_woman',
+      iconBg: 'bg-smarp-teal/10',
+      iconColor: 'text-smarp-teal',
+      title: 'Anesthésie obstétricale',
+      description: 'Adaptée aux spécificités de la grossesse et de l\'accouchement, cette prise en charge vise à soulager la douleur du travail tout en préservant la sécurité de la mère et de l\'enfant.',
+      items: [
+        'Péridurale ou rachianesthésie pour l\'accouchement et la césarienne',
+        'Anesthésie générale disponible en cas d\'urgence',
+        'Consultation pré-anesthésique obligatoire pendant la grossesse',
+      ],
+    },
   ];
 }
