@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 52" role="img" aria-label="SMARP — Anesthésie · Réanimation">
+  <!--
+    SMARP — Variation 3: Combined icon + wordmark
+    Icon on left (40×40), wordmark on right.
+    Use on light backgrounds (cream, white).
+    Transparent background.
+  -->
+
+  <!-- ── Icon block ─────────────────────────────────────────────── -->
+
+  <!-- Navy rounded square -->
+  <rect x="0" y="6" width="40" height="40" rx="5" fill="#0C2340"/>
+
+  <!-- Teal top stripe inside icon -->
+  <rect x="0" y="6" width="40" height="3" rx="2" fill="#0A7265"/>
+
+  <!-- S monogram — bold, white, centered in icon -->
+  <text
+    x="20"
+    y="37"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-weight="900"
+    font-size="24"
+    fill="#FFFFFF"
+  >S</text>
+
+  <!-- ── Wordmark block ──────────────────────────────────────────── -->
+
+  <!-- Thin vertical divider — subtle separator between icon and text -->
+  <rect x="49" y="10" width="1" height="32" rx="0.5" fill="#0C2340" opacity="0.15"/>
+
+  <!-- SMARP text — bold editorial serif, navy -->
+  <text
+    x="58"
+    y="31"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-weight="700"
+    font-size="22"
+    fill="#0C2340"
+    letter-spacing="2.5"
+  >SMARP</text>
+
+  <!-- Tagline — small caps, wide tracking, teal -->
+  <text
+    x="59"
+    y="43"
+    font-family="'DM Sans', Arial, 'Helvetica Neue', sans-serif"
+    font-weight="600"
+    font-size="7.5"
+    fill="#0A7265"
+    letter-spacing="1.8"
+  >ANESTHÉSIE · RÉANIMATION</text>
+</svg>

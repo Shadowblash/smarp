@@ -6,10 +6,12 @@ import { HomeContinuum } from './sections/home-continuum/home-continuum';
 import { HomeTrustBanner } from './sections/home-trust-banner/home-trust-banner';
 import { HomeSafetyProtocol } from './sections/home-safety-protocol/home-safety-protocol';
 import { HomeTeam } from './sections/home-team/home-team';
+import { HomeDoctolib } from './sections/home-doctolib/home-doctolib';
+import { HomeHasBanner } from './sections/home-has-banner/home-has-banner';
 
 @Component({
   selector: 'app-home',
-  imports: [HomeHero, HomeExpertise, HomeContinuum, HomeTrustBanner, HomeSafetyProtocol, HomeTeam],
+  imports: [HomeHero, HomeExpertise, HomeContinuum, HomeTrustBanner, HomeSafetyProtocol, HomeTeam, HomeDoctolib, HomeHasBanner],
   templateUrl: './home.html',
 })
 export class Home implements OnInit {
@@ -18,7 +20,7 @@ export class Home implements OnInit {
   ngOnInit(): void {
     this.seo.setPage({
       title: 'Accueil',
-      description: 'SMARP — Unité d\'Anesthésie Réanimation de l\'Hôpital Privé de la Loire. 18 médecins spécialistes, disponibles 24h/24 à Saint-Étienne.',
+      description: 'SMARP — Unité d\'Anesthésie Réanimation de l\'Hôpital Privé de la Loire. 19 médecins spécialistes, disponibles 24h/24 à Saint-Étienne.',
     });
   }
 }

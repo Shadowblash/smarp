@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="SMARP">
+  <!--
+    SMARP favicon — square format, optimized for 16×16 / 32×32 / 48×48.
+    Navy background + 3px teal accent + bold white "S".
+    No gradients, no thin strokes — maximum clarity at small sizes.
+  -->
+
+  <!-- Navy background -->
+  <rect width="32" height="32" rx="4" fill="#0C2340"/>
+
+  <!-- Teal accent stripe -->
+  <rect width="32" height="3" rx="2" fill="#0A7265"/>
+
+  <!-- Gold bottom-left accent dot — certification/trust touch from design tokens -->
+  <circle cx="5" cy="27" r="2" fill="#B8892A"/>
+
+  <!-- Bold S monogram -->
+  <text
+    x="17"
+    y="24"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-weight="900"
+    font-size="20"
+    fill="#FFFFFF"
+  >S</text>
+</svg>

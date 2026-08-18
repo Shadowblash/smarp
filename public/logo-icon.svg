@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="SMARP">
+  <!--
+    SMARP — Variation 1: Icon-only
+    Favicon-optimized monogram. Clean and legible at 16×16, 32×32, 48×48.
+    Navy background + 3px teal accent stripe (mirrors the website header).
+    Bold "S" in white — maximum contrast, no thin strokes.
+  -->
+
+  <!-- Navy background -->
+  <rect width="32" height="32" rx="4" fill="#0C2340"/>
+
+  <!-- Teal accent stripe — mirrors the 3px teal top bar in the site header -->
+  <rect width="32" height="3" rx="2" fill="#0A7265"/>
+
+  <!-- Bold S monogram — Arial Black for maximum legibility at tiny sizes -->
+  <text
+    x="16"
+    y="24"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-weight="900"
+    font-size="20"
+    fill="#FFFFFF"
+  >S</text>
+</svg>

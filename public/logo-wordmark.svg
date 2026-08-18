@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" role="img" aria-label="SMARP — Anesthésie · Réanimation">
+  <!--
+    SMARP — Variation 2: Wordmark (text-only)
+    Transparent background — works on cream (#F5F1EA) and white surfaces.
+    Playfair Display is loaded from Google Fonts in the browser context.
+    Georgia is the system-font fallback (closest serif match).
+  -->
+
+  <!-- SMARP wordmark — bold editorial serif, navy -->
+  <text
+    x="0"
+    y="35"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-weight="700"
+    font-size="34"
+    fill="#0C2340"
+    letter-spacing="3"
+  >SMARP</text>
+
+  <!-- Teal accent rule — eyebrow-style horizontal rule from the site design language -->
+  <rect x="0" y="40" width="96" height="2" rx="1" fill="#0A7265"/>
+
+  <!-- Tagline — DM Sans / Arial, semibold, wide tracking, teal -->
+  <text
+    x="1"
+    y="53"
+    font-family="'DM Sans', Arial, 'Helvetica Neue', sans-serif"
+    font-weight="600"
+    font-size="8.5"
+    fill="#0A7265"
+    letter-spacing="2.2"
+  >ANESTHÉSIE · RÉANIMATION</text>
+</svg>
