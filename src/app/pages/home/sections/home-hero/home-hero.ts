@@ -9,11 +9,11 @@ import { RouterLink } from '@angular/router';
 export class HomeHero {
   /**
    * Hero image — photographie prise au bloc opératoire de l'Hôpital Privé de la Loire.
-   * Cadrage vertical : deux soignants penchés sur le patient, composition centrée qui
+   * Cadrage vertical : un médecin de l'équipe en tenue de bloc, sujet centré qui
    * résiste au dégradé navy appliqué sur le bord gauche du panneau.
    */
   protected readonly heroImage = {
-    src: '/smarp-5.jpeg',
-    alt: 'Deux soignants en tenue stérile penchés au-dessus du patient au bloc opératoire — attention constante et gestes précis',
+    src: '/smarp-3.jpeg',
+    alt: "Médecin anesthésiste-réanimateur en tenue de bloc, masque et calot, vérifiant un fibroscope avant l'induction",
   };
 }
