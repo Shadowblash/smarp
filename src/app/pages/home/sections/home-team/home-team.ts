@@ -12,6 +12,13 @@ interface Doctor {
   templateUrl: './home-team.html',
 })
 export class HomeTeam {
+  protected readonly composition = [
+    { count: 19, label: 'Médecins anesthésistes-réanimateurs', icon: 'stethoscope' },
+    { count: 12, label: 'Infirmiers anesthésistes', icon: 'medical_services' },
+    { count: 8,  label: 'Secrétaires',                         icon: 'support_agent' },
+    { count: 1,  label: 'Directeur administratif',             icon: 'badge' },
+  ];
+
   protected readonly doctors: Doctor[] = [
     { name: 'Dr Jordan BAILLY' },
     {

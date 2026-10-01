@@ -15,6 +15,21 @@
       </p>
     </div>
 
+    <!-- Team composition -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
+      @for (member of composition; track member.label) {
+        <div class="flex items-center gap-4 p-5 bg-surface rounded-xl border border-outline-variant/50">
+          <div class="w-11 h-11 rounded-full bg-smarp-teal/10 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-smarp-teal" style="font-size: 22px;">{{ member.icon }}</span>
+          </div>
+          <div class="min-w-0">
+            <p class="text-3xl font-extrabold font-headline text-smarp-navy leading-none">{{ member.count }}</p>
+            <p class="text-xs text-on-surface-variant mt-1.5 leading-snug">{{ member.label }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
     <!-- Doctors grid — scale + border transition creates a satisfying lift
          effect that doesn't distort the grid layout for neighbouring cards. -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mb-10 items-start">
