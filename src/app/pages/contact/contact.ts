@@ -14,7 +14,7 @@ export class Contact implements OnInit {
   ngOnInit(): void {
     this.seo.setPage({
       title: 'Contact',
-      description: 'Contactez le service d\'anesthésie-réanimation SMARP : 39 boulevard de la Palle, 42030 Saint-Étienne. Tél. 04.77.42.27.00 — disponible 24h/24.',
+      description: 'Contactez le service d\'anesthésie-réanimation SMARP : 39 boulevard de la Palle, 42030 Saint-Étienne. Tél. 04.77.42.27.34 — disponible 24h/24.',
     });
   }
 }

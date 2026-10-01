@@ -66,7 +66,7 @@ export class Faq implements OnInit {
         },
         {
           question: 'Comment prendre rendez-vous pour la consultation ?',
-          answer: 'Contactez notre secrétariat au 04.77.42.27.00 ou par email à anesthesie@smarp42.fr. La consultation est généralement organisée plusieurs jours avant votre intervention, afin de laisser le temps à l\'équipe médicale de préparer votre prise en charge de façon optimale.',
+          answer: 'Contactez notre secrétariat au 04.77.42.27.34 ou par email à anesthesie@smarp42.fr. La consultation est généralement organisée plusieurs jours avant votre intervention, afin de laisser le temps à l\'équipe médicale de préparer votre prise en charge de façon optimale.',
         },
         {
           question: 'Que dois-je apporter à la consultation pré-anesthésique ?',
@@ -181,7 +181,7 @@ export class Faq implements OnInit {
         },
         {
           question: 'Comment contacter le service avant mon intervention ?',
-          answer: 'Vous pouvez nous joindre par téléphone au 04.77.42.27.00, par email à anesthesie@smarp42.fr, ou vous présenter directement à l\'Hôpital Privé de la Loire, 39 boulevard de la Palle, 42030 Saint-Étienne Cedex 2. En cas d\'urgence médicale, composez le 15 (SAMU) ou le 112.',
+          answer: 'Vous pouvez nous joindre par téléphone au 04.77.42.27.34, par email à anesthesie@smarp42.fr, ou vous présenter directement à l\'Hôpital Privé de la Loire, 39 boulevard de la Palle, 42030 Saint-Étienne Cedex 2. En cas d\'urgence médicale, composez le 15 (SAMU) ou le 112.',
         },
       ],
     },
