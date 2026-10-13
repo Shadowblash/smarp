@@ -19,7 +19,7 @@ export class Home implements OnInit {
 
   ngOnInit(): void {
     this.seo.setPage({
-      title: 'Accueil',
+      title: 'Anesthésie Réanimation à Saint-Étienne',
       description: 'SMARP — Unité d\'Anesthésie Réanimation de l\'Hôpital Privé de la Loire. 19 médecins spécialistes, disponibles 24h/24 à Saint-Étienne.',
     });
   }
