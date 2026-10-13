@@ -16,8 +16,8 @@ export class IntensiveCare implements OnInit {
 
   ngOnInit(): void {
     this.seo.setPage({
-      title: 'Intensive Care & Recovery',
-      description: 'Advanced monitoring and compassionate recovery — 24/7 expert vigilance in our ICU and PACU.',
+      title: 'Réanimation & Surveillance post-opératoire',
+      description: 'Réanimation et salle de réveil (SSPI) de l\'Hôpital Privé de la Loire : surveillance continue 24h/24 par les anesthésistes-réanimateurs SMARP, Saint-Étienne.',
     });
   }
 }
